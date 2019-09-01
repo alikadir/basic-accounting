@@ -1,0 +1,9 @@
+Powershell
+Run as Administrator 
+mkdir "C:\Documents and Settings\ali\Desktop\gul"
+
+WinKey + R 
+"C:\Documents and Settings\ali\Desktop\gul"
+
+Copy access.mdb
+Right Click > Security > Everyone > Full Access

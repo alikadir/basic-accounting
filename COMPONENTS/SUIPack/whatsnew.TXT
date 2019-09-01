@@ -1,0 +1,70 @@
+What's new
+-----------------------------------
+ '+' = New feature
+ '-' = Bug fixed or Removed
+ '*' = Improved or Changed
+-----------------------------------
+
+===================================
+Version 5.3   (65 components)
+2004/11/26
+===================================
+
++ Newly supports Delphi 2005 (Win32 part)
+
+-------[TsuiSideChannel]-----------
+
+- Fix a bug about ShowButton property
+
+
+===================================
+Version 5.2   (65 components)
+2004/09/30
+===================================
+
++ Added new component TsuiBuiltInThemeFile 
+  Supports to make the file skins be built into the EXE file
+
+===================================
+Version 5.1   (64 components)
+2004/09/19
+===================================
+
++ Added new component TsuiFilterComboBox
+
++ Added new component TsuiDirectoryListBox
+
++ Added new component TsuiFileListBox
+
+===================================
+Version 5.02   (61 components)
+2004/09/07
+===================================
+
++ Add "CheckThemeFile" method for TsuiThemeFile control for checking theme file.
+
+* Improved for TsuiThemeFile when open an invalid non-SUIPack theme file.
+
+- Fixed the bug "Can't maximize the window when Netmeeting running".
+
+
+===================================
+Version 5.01   (61 components)
+2004/08/12
+===================================
+
+- Fixed many minor bugs
+
+
+===================================
+Version 5.0   (61 components)
+2004/07/23
+===================================
+
+* Real WYSIWYG.
+
+* Improved appearance of skinned MDI forms/MDI child forms.
+
+* New skins full supported - Longhorn, Media Player 10, MSN Messenger, RealOne.
+
+* Many controls improved.

@@ -1,0 +1,123 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, StdCtrls, Mask, DBCtrls, DB, ADODB, ExtCtrls,
+  ComCtrls, Buttons, SUIImagePanel, RzBHints;
+
+type
+  Talis = class(TForm)
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBEdit1: TDBEdit;
+    ADOQuery2: TADOQuery;
+    DataSource2: TDataSource;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    box: TGroupBox;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    yeniiptal: TBitBtn;
+    yenionay: TBitBtn;
+    onay: TBitBtn;
+    iptal: TBitBtn;
+    Label14: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    esc: TBitBtn;
+    Edit6: TEdit;
+    butonbox: TsuiPanel;
+    yeni: TBitBtn;
+    duzen: TBitBtn;
+    sil: TBitBtn;
+    suiPanel2: TsuiPanel;
+    Panel1: TPanel;
+    RzBalloonHints1: TRzBalloonHints;
+    procedure DBEdit1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure escClick(Sender: TObject);
+    procedure yeniClick(Sender: TObject);
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  alis: Talis;
+
+implementation
+
+{$R *.dfm}
+
+
+  procedure Talis.DBEdit1Change(Sender: TObject);
+begin
+butonbox.Enabled:=true;
+ datasource2.enabled:=true;
+
+adoquery2.close;
+adoquery2.sql.clear;
+adoquery2.sql.add('select * from urunler');
+adoquery2.sql.add('where firmaadi=:ad');
+adoquery2.Parameters.ParamByName('ad').Value:=dbedit1.Text;
+adoquery2.open;
+
+end;
+
+
+procedure Talis.FormCreate(Sender: TObject);
+begin
+
+
+setwindowlong(handle,gwl_style,getwindowlong(handle,
+gwl_style) and not ws_caption);
+height:=height+1;
+box.Visible:=false;
+ AnimateWindow(alis.Handle,1000,AW_CENTER);
+
+ end;
+
+procedure Talis.escClick(Sender: TObject);
+begin
+alis.Close;
+end;
+
+procedure Talis.yeniClick(Sender: TObject);
+begin
+butonbox.Enabled:=false;
+dbgrid1.Enabled:=false;
+dbgrid2.Enabled:=false;
+box.Visible:=true;
+onay.Visible:=false;
+iptal.visible:=false;
+adoquery2.Insert;
+end;
+
+end.

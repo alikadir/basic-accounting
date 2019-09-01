@@ -1,0 +1,3 @@
+SUIPack.chm is the help file. Double click it.
+
+Skin files are in the Themes directory.
